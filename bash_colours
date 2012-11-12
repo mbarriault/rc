@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Bash Colour Variables
+BGREEN='\033[1;32m'
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+BRED='\033[1;31m'
+RED='\033[0;31m'
+BBLUE='\033[1;34m'
+BLUE='\033[0;34m'
+NORMAL='\033[00m'
+YELLOW='\033[0;40m'
+
