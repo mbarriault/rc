@@ -2,42 +2,42 @@
 	name = Michael Barriault
 	email = mikebarriault@me.com
 [apply]
-  whitespace = fix
+	whitespace = fix
 [core]
-  excludesfile = ~/.gitignore
-  attributesfile = ~/.gitattributes
-  whitespace = fix,space-before-tab,tab-in-indent,trailing-space
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+	whitespace = fix,space-before-tab,tab-in-indent,trailing-space
 	quotepath = false
 [color]
-  ui = auto
+	ui = auto
 [color "branch"]
-  current = yellow reverse
-  local = yellow
-  remote = green
+	current = yellow reverse
+	local = yellow
+	remote = green
 [color "diff"]
-  meta = yellow bold
-  frag = magenta bold
-  old = red bold
-  new = green bold
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
 [color "status"]
-  added = yellow
-  changed = green
-  untracked = cyan
+	added = yellow
+	changed = green
+	untracked = cyan
 [merge]
-  log = true
+	log = true
 	conflictstyle = diff3
 #[url "git@github.com:"]
-#  insteadOf = "gh:"
-#  pushInsteadOf = "github:"
-#  pushInsteadOf = "git://github.com/"
+#	insteadOf = "gh:"
+#	pushInsteadOf = "github:"
+#	pushInsteadOf = "git://github.com/"
 #[url "git://github.com/"]
-#  insteadOf = "github:"
+#	insteadOf = "github:"
 #[url "git@gist.github.com:"]
-#  insteadOf = "gst:"
-#  pushInsteadOf = "gist:"
-#  pushInsteadOf = "git://gist.github.com/"
+#	insteadOf = "gst:"
+#	pushInsteadOf = "gist:"
+#	pushInsteadOf = "git://gist.github.com/"
 #[url "git://gist.github.com/"]
-#  insteadOf = "gist:"
+#	insteadOf = "gist:"
 [pretty]
 	graph = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue) <%an>%Creset
 

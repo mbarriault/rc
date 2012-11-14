@@ -10,7 +10,20 @@ function fish_prompt --description 'Write out the prompt'
   end
 
     if not set -q __git_cb
-        set __git_cb ":"(set_color brown)(git branch ^/dev/null | grep \* | sed 's/* //')(set_color normal)""
+        if [ (git status 2> /dev/null | tail -n1) ]
+        	set __git_d "*"
+        	set __git_status (git status 2> /dev/null | tail -n1)
+        end
+        if set -q __git_d
+        	if [ $__git_status = "nothing to commit (working directory clean)" ]
+        		set __git_d ""
+        	else
+        		if [ $__git_status = "nothing added to commit but untracked files present (use \"git add\" to track)" ]
+        			set __git_d ""
+        		end
+        	end
+        end
+        set __git_cb ":"(set_color brown)(git branch ^/dev/null | grep \* | sed 's/* //')(echo $__git_d)(set_color normal)""
     end
 
   switch $USER
@@ -36,14 +49,4 @@ function fish_prompt --description 'Write out the prompt'
     echo -n -s "$USER" @ "$__fish_prompt_hostname" ' ' "$__fish_prompt_cwd" (prompt_pwd) "$__fish_prompt_normal" "$__git_cb " "> "
 
   end
-end
-
-function add --description "Add files to iTunes"
-	for file in $argv
-		osascript -e "tell application \"iTunes\" to add POSIX file \"$file\""
-	end
-end
-
-function cmakeunix --description "CMake with Unix makefiles"
-    cmake -G "Unix Makefiles" $argv
 end
